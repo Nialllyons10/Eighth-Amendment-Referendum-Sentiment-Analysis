@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Eight Amendment Contact</title>
+
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="style.css">
+		<!-- jQuery CDN -->
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <!-- Bootstrap Js CDN -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+	
+		<div class="wrapper">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Eight Amendment Referendum Analysis</h3>
+                    <strong>8th</strong>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <li>
+                        <a href="index.html">
+                            <i class="glyphicon glyphicon-briefcase"></i>
+                            About
+                        </a>
+                        <a href="graphs.html" >
+                            <i class="glyphicon glyphicon-signal"></i>
+                            Graphs
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html">
+                            <i class="glyphicon glyphicon-send"></i>
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Page Content Holder -->
+            <div id="content">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                                <i class="glyphicon glyphicon-indent-right"></i>
+                                <span></span>
+								<span></span>
+								<span></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"></div>
+                    </div>
+                </nav>
+
+				<h2>How to contact us?</h2>
+				<p>This website was made by two Dublin City University students along side ADAPT's world leading sentiment analysis tools to develop visualisations 
+				and a better understanding of the upcoming referendum. We are here to answer any questions you may have about our website so make sure to reach out to us
+				and we wil respond as soon as we can.</p>
+				
+				<!-- Contact Form -->
+                <div class="containers">  
+				  <form id="contact"  method="post">
+					<h3>Contact Form</h3>
+					<h4>Contact us today, and we will get back to you as soon as possible!</h4>
+					<fieldset>
+					  <input placeholder="Your name" type="text" tabindex="1" required autofocus>
+					</fieldset>
+					<fieldset>
+					  <input placeholder="Your Email Address" type="email" tabindex="2" required>
+					</fieldset>
+					<fieldset>
+					  <input placeholder="Your Phone Number" type="tel" tabindex="3" required>
+					</fieldset>
+					<fieldset>
+					  <textarea placeholder="Type your Message Here...." tabindex="5" required></textarea>
+					</fieldset>
+					<fieldset>
+					  <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+					</fieldset>
+				  </form> 
+				</div>
+                <div class="line"></div>
+
+            </div>
+        </div>
+
+        <script type="text/javascript">
+             $(document).ready(function () {
+                 $('#sidebarCollapse').on('click', function () {
+                     $('#sidebar').toggleClass('active');
+                 });
+             });
+        </script>
+    </body>
+</html>

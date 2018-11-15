@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+ 
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Highcharts Graph Page</title>
+	
+	<!-- Bootstrap CSS CDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!-- Bootstrap Js CDN -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<!-- jQuery CDN -->
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+	<!-- Highcharts Libraries -->
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+	<script src="http://code.highcharts.com/modules/data.js"></script>
+	<script src="http://code.highcharts.com/modules/exporting.js"></script>
+	
+</head>
+<body>
+
+	<div class="container-fluid">
+		<div class="row p-3 row ml-3 ">
+			<div class="col-sm-7 col-md-7">
+				<div id="container1"></div>
+			</div>
+			<div class="col-sm-5 col-md-5">
+				<div id="container2"></div>
+			</div>
+			<div class="col-sm-5 col-md-5">
+				<div id="container3"></div>
+			</div>
+			<div class="col-sm-5 col-md-5">
+				<div id="container4"></div>	
+			</div>
+			<div class="col-sm-5 col-md-5">
+				<input type="button" value="Back to homepage!" onclick="history.back(-1)" />
+			</div>
+			
+		</div>
+	</div>
+
+	<!-- Bar Chart -->
+	<script type="text/javascript">
+		$.get("overall_sa_stats.csv", function(csv) {
+			$('#container1').highcharts({
+				chart: {
+					type: 'bar'
+				},
+				
+				data: {
+					csv: csv
+				},
+				
+				title: {
+					text: 'Percentage of Positive and Negative Tweets'
+				},
+				
+				yAxis: { 
+					min:0,
+					max:100,
+					title: {
+						text: 'Percentage'
+					}
+				},
+				tooltip: {
+					valueSuffix: ' %'
+					
+				}
+				
+				
+			});
+		});
+    </script>
+	
+	<!-- Column Chart -->
+	<script type="text/javascript">
+			$.get('total_num_tweets.csv', function(csv) {
+				$('#container2').highcharts({
+					chart: {
+						type: 'column'
+					},
+					
+					data: {
+						csv: csv
+					},
+					
+					title: {
+						text: 'Number of Tweets Collected since 26/02/18'
+					},
+					
+					yAxis: { 
+						min:0,
+						labels: {
+							formatter: function () {
+								return this.value / 1000 + 'k';
+							}
+						}
+					}
+				});
+			});
+	</script>
+	
+	<!-- Pie Chart -->
+	<script type="text/javascript">
+			$.get("county_stats.csv", function(csv) {
+				$('#container3').highcharts({
+					chart: {
+						type: 'pie'
+					},
+					
+					data: {
+						csv: csv
+					},
+					
+					title: {
+						text: 'Tweets Per County'
+					},
+					
+					yAxis: { 
+						title: {
+							text: 'Percentage'
+						}
+					},
+					tooltip: {
+						pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+						
+					}
+					
+				});
+			});
+    </script>
+	
+	<!-- Pie Chart -->
+	<script type="text/javascript">
+			$.get("country_stats.csv", function(csv) {
+				$('#container4').highcharts({
+					chart: {
+						type: 'pie',
+					},
+					
+					data: {
+						csv: csv
+					},
+					
+					title: {
+						text: 'Tweets Per Country'
+					},
+					
+					yAxis: { 
+						title: {
+							text: 'Percentage'
+						}
+					},
+					tooltip: {
+						valueSuffix: ' %'
+						
+					}
+					
+				});
+			});
+    </script>
+		
+</body>
+</html>

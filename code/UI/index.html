@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>Eight Amendment Home</title>
+
+        <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="style.css">
+		<!-- jQuery CDN -->
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <!-- Bootstrap Js CDN -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+	
+		<div class="wrapper">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3>Eight Amendment Referendum Analysis</h3>
+                    <strong>8th</strong>
+                </div>
+
+                <ul class="list-unstyled components">
+                    <li>
+                        <a href="index.html">
+                            <i class="glyphicon glyphicon-briefcase"></i>
+                            About
+                        </a>
+                        <a href="graphs.html" >
+                            <i class="glyphicon glyphicon-signal"></i>
+                            Graphs
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html">
+                            <i class="glyphicon glyphicon-send"></i>
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Page Content Holder -->
+            <div id="content">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                                <i class="glyphicon glyphicon-indent-right"></i>
+                                <span></span>
+								<span></span>
+								<span></span>
+							</button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"></div>
+                    </div>
+                </nav>
+				
+				<!-- Image -->
+				<img style="margin:0px auto;display:block" width:="400px" height="400px" src="wpid1.jpg"/>
+	
+				<!-- Explanation -->
+                <h2>What is the Eight Amendment?</h2>
+				<i>Article 40.3.3 </i>
+                <i> ‘The states acknowledges the right to life of the unborn and, with due regard to the equal right to life of the mother, guarantees in its laws to respect, and as far as practicable, by its laws to defend and vindicate that right.’</i>
+				<p>Upon election to Taoiseach of Leo Varadkar, in June 2017 there has been ongoing debate as he announced that a referendum would take place on whether the Eighth Amendment to the Constitution, 
+				 which gives an equal right to life to the mother and the unborn child - should be retained, repealed or amended. The referendum discussions currently being held on Twitter show how people really feel about this upcoming referendum, and the impact that people believe it will have in the country in the coming years. 
+				 It constitutes a vast and vivid source of user and politics inspired expressions of sentiment. Through sentiment analysis on user generated tweets about the upcoming referendum, from this website you can 
+				 track real time information to predict the referendum outcome. Naturally, many of the tweets that are currently being produced about the Eighth Amendment Referendum are in English. However, we have also included tweets captured in the Irish language to develop and understand 
+				 a wider range of voters, to get the opinions of the nation. </p>
+                <div class="line"></div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+             $(document).ready(function () {
+                 $('#sidebarCollapse').on('click', function () {
+                     $('#sidebar').toggleClass('active');
+                 });
+             });
+        </script>
+    </body>
+</html>
